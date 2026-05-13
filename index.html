@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+        <h1 class="display-4 mb-3">🍳 What's in your kitchen?</h1>
+        <p class="lead">Type in the ingredients you have, and our AI will suggest delicious recipes you can make right now!</p>
+        <hr>
+        <div class="card p-4">
+            <form action="/recommend" method="POST">
+                <div class="mb-4">
+                    <label for="ingredients" class="form-label fw-bold">Enter ingredients (comma-separated):</label>
+                    <textarea class="form-control" id="ingredients" name="ingredients" rows="3" placeholder="e.g., chicken, rice, tomato, garlic, onion, bell pepper, cumin" required></textarea>
+                    <div class="form-text">💡 Tip: Be specific! "Chicken breast" is better than just "chicken".</div>
+                </div>
+                <button type="submit" class="btn btn-custom btn-lg">🔍 Find Recipes</button>
+            </form>
+        </div>
+        <div class="mt-5">
+            <h5>✨ How it works</h5>
+            <p>Our AI analyzes your ingredients and matches them with thousands of recipes. The more ingredients you list, the better the match!</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
